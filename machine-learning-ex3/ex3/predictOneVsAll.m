@@ -39,4 +39,12 @@ X = [ones(m, 1) X];
 % =========================================================================
 
 
+for i = 1:m
+    RX = repmat(X(i,:),num_labels,1);
+    RX = RX .* all_theta;
+    SX = sum(RX,2);
+    [_, index] = max(SX);
+    p(i) = index;
+end
+
 end
